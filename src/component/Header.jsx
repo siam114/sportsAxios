@@ -19,6 +19,9 @@ const Header = () => {
       <li>
         <a href="">My Equipment List</a>
       </li>
+      <li>
+        <a href="/about">About Us</a>
+      </li>
     </>
   );
   return (
