@@ -7,13 +7,13 @@ const Footer = () => {
     <footer className="footer footer-center bg-[#273248] text-white rounded p-10">
         <div>
             <h2 className="text-3xl font-bold">SportAxis</h2>
-            <p className="w-[500px]">SportAxis is your go-to store for high-quality sports equipment, offering a wide range of products to elevate your game and fuel your passion for sports.</p>
+            <p className="md:w-[500px]">SportAxis is your go-to store for high-quality sports equipment, offering a wide range of products to elevate your game and fuel your passion for sports.</p>
         </div>
-      <nav className="grid grid-flow-col gap-4">
+      <nav className="grid md:grid-flow-col gap-4">
         <Link to='/' className="link link-hover">Home</Link>
         <Link to='/about' className="link link-hover">About us</Link>
         <Link to='#' className="link link-hover">Contact</Link>
-        <Link to='/' className="link link-hover">All Sports Equipment</Link>
+        <Link to='/allSports' className="link link-hover">All Sports Equipment</Link>
       </nav>
       <nav>
         <div className="grid grid-flow-col text-2xl gap-4">
