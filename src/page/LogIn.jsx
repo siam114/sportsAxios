@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const LogIn = () => {
     return (
         <div className="card bg-base-100 py-10 w-full mx-auto my-10 max-w-sm shrink-0 shadow-2xl">
+           <h2 className="text-2xl font-semibold text-center">Login your account</h2>
         <form className="card-body">
           <div className="form-control">
             <label className="label">
