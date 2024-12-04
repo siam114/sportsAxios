@@ -41,7 +41,7 @@ const AddEquipment = () => {
     }
     return (
         <div className="bg-[#F4F3F0] p-8 md:p-20">
-        <h2 className="text-3xl font-extrabold text-center mb-10">Add Equipment </h2>
+        <h2 className="text-4xl font-bold text-center mb-10">Add Equipment </h2>
         <form onSubmit={handleAddEquipment}>
             {/* form name and Category row */}
             <div className="md:flex gap-5">
