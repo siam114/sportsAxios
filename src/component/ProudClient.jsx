@@ -16,11 +16,12 @@ const ProudClient = () => {
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
+         className: "center px-10",
         slidesToScroll: 1,
         autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 3000,
+        speed: 3000,
+        autoplaySpeed: 2000,
         cssEase: "linear"
       };
       return (
@@ -30,22 +31,22 @@ const ProudClient = () => {
             <h2 className="text-2xl font-bold ml-10 pb-10">Government Sector</h2>
           <Slider {...settings}>
             <div>
-             <img src={img1} alt="" className="md:w-56 md:h-56"/>
+             <img src={img1} alt="" className="md:w-32 md:h-32"/>
             </div>
             <div>
-            <img src={img2} alt="" className="md:w-56 md:h-56"/>
+            <img src={img2} alt="" className="md:w-32 md:h-32"/>
             </div>
             <div>
-            <img src={img3} alt="" className="md:w-56 md:h-56"/>
+            <img src={img3} alt="" className="md:w-32 md:h-32"/>
             </div>
             <div>
-            <img src={img4} alt="" className="md:w-56 md:h-56"/>
+            <img src={img4} alt="" className="md:w-32 md:h-32"/>
             </div>
             <div>
-            <img src={img5} alt="" className="md:w-56 md:h-56"/>
+            <img src={img5} alt="" className="md:w-32 md:h-32"/>
             </div>
             <div>
-            <img src={img6} alt="" className="md:w-56 md:h-56"/>
+            <img src={img6} alt="" className="md:w-32 md:h-32"/>
             </div>
           </Slider>
          </div>
@@ -55,16 +56,16 @@ const ProudClient = () => {
             <h2 className="text-2xl font-bold ml-10 pb-10">Corporate Clients</h2>
           <Slider {...settings}>
             <div>
-             <img src={img7} alt="" />
+             <img src={img7} alt="" className="md:w-36 md:h-36"/>
             </div>
             <div>
-            <img src={img8} alt="" />
+            <img src={img8} alt="" className="md:w-36 md:h-36"/>
             </div>
             <div>
-            <img src={img9} alt="" />
+            <img src={img9} alt="" className="md:w-36 md:h-36"/>
             </div>
             <div>
-            <img src={img10} alt="" />
+            <img src={img10} alt="" className="md:w-36 md:h-36"/>
             </div>
           </Slider>
          </div>

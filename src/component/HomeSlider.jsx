@@ -20,7 +20,7 @@ const HomeSlider = () => {
         modules={[Autoplay, Navigation]}
         spaceBetween={0}
         slidesPerView={1}
-        navigation
+        // navigation
         autoplay={{
           delay: 2000,
           disableOnInteraction: false
@@ -32,7 +32,7 @@ const HomeSlider = () => {
 
           return (
             <SwiperSlide key={index}>
-              <div className="w-full h-[calc(100vh-82px)] aspect-video">
+              <div className="w-full h-[calc(100vh-64px)] aspect-video">
                 <img 
                 loading='lazy'
                   src={slide[`coverImg${index}`]} 

@@ -11,14 +11,13 @@ const Header = () => {
       <NavLink to="/allSports">All Sports Equipment</NavLink>
       <NavLink to='/addEquipment'>Add Equipment</NavLink>
       <NavLink to='/allList'>My Equipment List</NavLink>
-      <NavLink to='/about'>About Us</NavLink>
     </div>
   );
   return (
-    <div className="navbar bg-[#273248] text-white w-full mx-auto md:px-10 py-5">
+    <div className="navbar bg-[#273248] text-white w-full mx-auto md:px-10 py-2">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} onClick={()=>setOpen(!open)} className="btn text-2xl lg:hidden">
+          <div tabIndex={0} onClick={()=>setOpen(!open)} className="btn btn-sm !px-1.5 text-xl lg:hidden">
           {
             open === true? <IoCloseSharp /> : <IoMdMenu />
           }
@@ -26,7 +25,7 @@ const Header = () => {
           {
             open && <ul
             tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 font-semibold text-black rounded-box z-[1] mt-3 w-52 p-5 shadow"
+        className="menu menu-sm dropdown-content bg-base-100 font-semibold text-black rounded-box z-[50] mt-3 w-52 p-5 shadow"
           >
             {links}
           </ul>
@@ -38,7 +37,7 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/auth/login' className="btn font-semibold">Login</Link>
+        <Link to='/auth/login' className="btn btn-sm font-semibold">Login</Link>
       </div>
     </div>
   );

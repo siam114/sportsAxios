@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const EquipmentTable = ({equipment,idx}) => {
-    const {name,category,price} = equipment
+  const navigate = useNavigate()
+    const {_id,name,category,price} = equipment;
+    const handleDetails = (id) =>{
+      navigate(`/equipment/${id}/details`)
+    }
   return (
     <>
       <tr>
@@ -10,7 +15,7 @@ const EquipmentTable = ({equipment,idx}) => {
         <td>{category}</td>
         <td>{price}</td>
         <td>
-            <button className="bg-[#273248] hover:text-[#273248] hover:bg-pink-200  px-4 py-2 rounded text-white">Details</button>
+            <button onClick={()=>handleDetails(_id)} className="bg-[#273248] hover:text-[#273248] hover:bg-red-400  px-4 py-2 rounded text-white">Details</button>
         </td>
       </tr>
     </>

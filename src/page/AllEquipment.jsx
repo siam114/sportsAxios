@@ -3,7 +3,7 @@ import EquipmentTable from "./EquipmentTable";
 
 const AllEquipment = () => {
     const equipmentData = useLoaderData();
-    console.log(equipmentData)
+    // console.log(equipmentData)
 
   return (
     <div className="py-10 bg-[#F4F3F0] ">
@@ -18,8 +18,8 @@ const AllEquipment = () => {
           required
         />
       </div>
-      <div className="w-1/2 mx-auto bg-slate-50 px-10">
-        <div className="overflow-x-auto">
+      <div className="md:w-1/2 w-full mx-auto bg-slate-50 md:px-10">
+        <div className="md:overflow-x-auto overflow-x-hidden">
           <table className="table">
             
             <thead>

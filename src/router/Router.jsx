@@ -9,6 +9,7 @@ import EquipmentList from "../page/EquipmentList";
 import AuthLayout from "../layout/AuthLayout";
 import LogIn from "../page/LogIn";
 import Register from "../page/Register";
+import Details from "../component/Details";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About/>
+            },
+            {
+                path: '/equipment/:id/details',
+                element:<Details/>,
+                loader: ({params})=>fetch(`http://localhost:5000/equipment/${params.id}`)
             }
         ]
     },
