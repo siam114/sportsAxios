@@ -1,13 +1,14 @@
 import HomeSlider from "../component/HomeSlider";
 import Leading from "../component/Leading";
 import ProudClient from "../component/ProudClient";
+import SportsCategory from "../component/SportsCategory";
 
 const Home = () => {
     return (
         <div>
             <HomeSlider/>
             <div>
-            <h2 className="text-3xl font-bold text-center mb-5 mt-10">OUR PROUD CLIENTS</h2>
+           <SportsCategory/>
             <ProudClient/>
             <Leading/>
             </div>
