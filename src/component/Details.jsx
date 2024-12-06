@@ -87,7 +87,7 @@ const Details = () => {
         </div>
 
         <button className="mt-6 px-6 py-2 bg-[#273248] text-white rounded hover:bg-red-600 transition">
-          <Link to="/allSports">
+          <Link to="/">
             <FaArrowLeftLong className="inline-flex mr-1" /> Back to previous
           </Link>
         </button>

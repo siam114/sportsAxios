@@ -1,8 +1,8 @@
 const EquipmentList = () => {
+
     return (
-        <div>
-            
-        </div>
+       <div>
+       </div>
     );
 };
 
