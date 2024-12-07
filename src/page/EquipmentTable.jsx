@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const EquipmentTable = ({equipment,idx}) => {
   const navigate = useNavigate()
     const {_id,name,category,price} = equipment;
+    
     const handleDetails = (id) =>{
       navigate(`/equipment/${id}/details`)
     }

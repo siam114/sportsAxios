@@ -1,3 +1,4 @@
+
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaArrowLeftLong, FaRegStar, FaStar } from "react-icons/fa6";
 import { Link, useLoaderData } from "react-router-dom";
@@ -36,6 +37,7 @@ const Details = () => {
     status,
     time,
   } = details;
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
       {/* Image Section */}
@@ -88,7 +90,7 @@ const Details = () => {
 
         <button className="mt-6 px-6 py-2 bg-[#273248] text-white rounded hover:bg-red-600 transition">
           <Link to="/">
-            <FaArrowLeftLong className="inline-flex mr-1" /> Back to previous
+            <FaArrowLeftLong className="inline-flex mr-1" /> Back to Home
           </Link>
         </button>
       </div>
