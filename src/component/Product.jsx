@@ -43,11 +43,12 @@ const Product = ({ product }) => {
   };
 
   return (
-    <div
+    <div >
+      <div
       data-aos="zoom-in-up"
       data-aos-duration="2000"
       data-aos-once="true"
-      className="max-w-sm  bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
+      className="max-w-sm bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
     >
       <div className="relative ">
         <img src={photo} alt={name} className="w-full h-56 object-fill" />
@@ -91,6 +92,7 @@ const Product = ({ product }) => {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };
