@@ -3,6 +3,7 @@ import { IoMdMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -60,11 +61,13 @@ const Header = () => {
         {user ? (
           <div className="flex flex-col items-center">
             <img
-              title={user?.displayName}
+             data-tooltip-id="user-tooltip"
+             data-tooltip-content={user?.displayName || "No username available"}
               className="w-10 h-10 rounded-full"
               src={user?.photoURL}
               alt=""
             />
+             <ReactTooltip id="user-tooltip" place="top" type="dark" effect="float" />
             {/* <p> {user && user.email}</p> */}
           </div>
         ) : null}
