@@ -1,3 +1,8 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
+
 const About = () => {
     return (
       <div>
@@ -13,7 +18,11 @@ const About = () => {
               have the right gear to excel in your sport.
             </p>
   
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div 
+            data-aos="zoom-in-up"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
   
               <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg">
                 <h3 className="text-xl font-bold mb-2">Premium Equipment</h3>

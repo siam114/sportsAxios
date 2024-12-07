@@ -6,10 +6,13 @@ import Walking from '../assets/Walking Pad.jpg'
 import Exercise from '../assets/Exercise Cycle.jpg'
 import Dumbbells from '../assets/dumbbell.svg'
 import Basketball from '../assets/Basketball.png'
+import { Fade } from "react-awesome-reveal";
 const SportsCategory = () => {
     return (
         <div className='w-11/12 mx-auto my-20'>
+            <Fade direction="left">
             <h2 className="text-3xl font-bold text-center mb-10 mt-10">SPORTS CATEGORIES</h2>
+            
             <div className='grid grid-cols-3 md:grid-cols-5 gap-10 justify-items-center'>
             <div className='flex-col justify-center'>
                 <img src={cricket} className='w-32 h-32' alt="" />
@@ -45,6 +48,7 @@ const SportsCategory = () => {
             </div>
             
             </div>
+            </Fade>
         </div>
     );
 };
