@@ -10,6 +10,7 @@ import AuthLayout from "../layout/AuthLayout";
 import LogIn from "../page/LogIn";
 import Register from "../page/Register";
 import Details from "../component/Details";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addEquipment',
-                element: <AddEquipment/>
+                element: <PrivateRoute><AddEquipment/></PrivateRoute>
             },
             {
                 path: '/allList',

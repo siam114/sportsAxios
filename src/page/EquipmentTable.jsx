@@ -13,7 +13,7 @@ const EquipmentTable = ({equipment,idx}) => {
         <td>{idx + 1}</td>
         <td>{name}</td>
         <td>{category}</td>
-        <td>{price}</td>
+        <td>${price}</td>
         <td>
             <button onClick={()=>handleDetails(_id)} className="bg-[#273248] hover:text-[#273248] hover:bg-red-400  px-4 py-2 rounded text-white">Details</button>
         </td>

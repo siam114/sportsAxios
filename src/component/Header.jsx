@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Header = () => {
+  const {user,logOut} = useContext(AuthContext)
   const [open,setOpen] = useState(false);
   const links = (
     <div className="flex flex-col md:flex-row gap-2 md:gap-5">
@@ -37,7 +39,24 @@ const Header = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/auth/login' className="btn btn-sm font-semibold">Login</Link>
+      {user ? (
+            <div className="flex flex-col items-center">
+              <img
+                title={user?.displayName}
+                className="w-10 h-10 rounded-full"
+                src={user?.photoURL}
+                alt=""
+              />
+              <p> {user && user.email}</p>
+            </div>
+          ) : null}
+
+          {
+            user && user?.email 
+            ? <button onClick={logOut} className="btn btn-sm font-semibold ml-3">Log-Out</button> 
+            :  <Link to='/auth/login' className="btn btn-sm font-semibold ml-3">Login</Link>
+          }
+
       </div>
     </div>
   );
