@@ -1,11 +1,14 @@
 import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
 
-const AddEquipment = () => {
+const UpdateEquipment = () => {
     const { user } = useContext(AuthContext);
-    // console.log(user.displayName)
-    const handleAddEquipment = e =>{
+    const updatedData = useLoaderData();
+    const {_id,name,category,description,customization,time,status,price,rating,photo} = updatedData
+
+    const handleUpdateEquipment = e =>{
         e.preventDefault();
 
         const form = e.target;
@@ -21,24 +24,24 @@ const AddEquipment = () => {
         const email = form.email.value;
         const username = form.username.value;
 
-        const newEquipment = {name,category,description,customization,time,status,price,rating,photo,email,username}
-        console.log(newEquipment)
+        const updatedEquipment = {name,category,description,customization,time,status,price,rating,photo,email,username}
+        console.log(updatedEquipment)
 
         // send data to the server
-        fetch('http://localhost:5000/equipment',{
-            method: 'POST',
+        fetch(`http://localhost:5000/equipment/${_id}`,{
+            method: 'PUT',
             headers:{
                 'content-type':'application/json'
             },
-            body:JSON.stringify(newEquipment)
+            body:JSON.stringify(updatedEquipment)
         })
         .then(res =>res.json())
         .then(data=>{
             console.log(data);
-            if(data.insertedId){
+            if(data.modifiedCount > 0){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Product Added Successfully',
+                    text: 'Product Updated Successfully',
                     icon: 'success',
                     confirmButtonText: 'OK'
                   })
@@ -48,8 +51,8 @@ const AddEquipment = () => {
 
     return (
         <div className="bg-[#F4F3F0] p-8 md:p-20">
-        <h2 className="text-4xl font-bold text-center mb-10">Add Equipment </h2>
-        <form onSubmit={handleAddEquipment}>
+        <h2 className="text-4xl font-bold text-center mb-10">Update Equipment </h2>
+        <form onSubmit={handleUpdateEquipment}>
             {/* form name and Category row */}
             <div className="md:flex gap-5">
                 <div className="form-control md:w-1/2">
@@ -57,7 +60,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Item Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="name" placeholder="Item Name" className="input input-bordered w-full"/>
+                        <input type="text" name="name" defaultValue={name} placeholder="Item Name" className="input input-bordered w-full"/>
                     </label>
                 </div>
                 <div className="form-control md:w-1/2">
@@ -65,7 +68,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Category Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="category" placeholder="Category Name" className="input input-bordered w-full" id="" />
+                        <input type="text" name="category" defaultValue={category} placeholder="Category Name" className="input input-bordered w-full" id="" />
                     </label>
                 </div>
             </div>
@@ -76,7 +79,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Description</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="description" placeholder="Description" className="input input-bordered w-full"/>
+                        <input type="text" name="description" defaultValue={description} placeholder="Description" className="input input-bordered w-full"/>
                     </label>
                 </div>
                 <div className="form-control md:w-1/2">
@@ -84,7 +87,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Customization</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="customization" placeholder="Customization" className="input input-bordered w-full" id="" />
+                        <input type="text" name="customization" defaultValue={customization} placeholder="Customization" className="input input-bordered w-full" id="" />
                     </label>
                 </div>
             </div>
@@ -95,7 +98,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Processing Time</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="time" placeholder="Processing Time" className="input input-bordered w-full"/>
+                        <input type="text" name="time" defaultValue={time} placeholder="Processing Time" className="input input-bordered w-full"/>
                     </label>
                 </div>
                 <div className="form-control md:w-1/2">
@@ -103,7 +106,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Stock Status</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="status" placeholder="Stock Status" className="input input-bordered w-full" id="" />
+                        <input type="text" name="status" defaultValue={status} placeholder="Stock Status" className="input input-bordered w-full" id="" />
                     </label>
                 </div>
             </div>
@@ -114,7 +117,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Price</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="price" placeholder="Price" className="input input-bordered w-full"/>
+                        <input type="text" name="price" defaultValue={price} placeholder="Price" className="input input-bordered w-full"/>
                     </label>
                 </div>
                 <div className="form-control md:w-1/2">
@@ -122,7 +125,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Rating</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" id="" />
+                        <input type="text" name="rating" defaultValue={rating} placeholder="Rating" className="input input-bordered w-full" id="" />
                     </label>
                 </div>
             </div>
@@ -141,7 +144,7 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">User Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" readOnly defaultValue={user?.displayName}  name="username" placeholder="Name" className="input input-bordered w-full" id="" />
+                        <input type="text" readOnly  defaultValue={user?.displayName}  name="username" placeholder="Name" className="input input-bordered w-full" id="" />
                     </label>
                 </div>
             </div>
@@ -152,14 +155,14 @@ const AddEquipment = () => {
                         <span className="label-text font-semibold">Photo URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full"/>
+                        <input type="text" name="photo" defaultValue={photo} placeholder="Photo URL" className="input input-bordered w-full"/>
                     </label>
                 </div>
             </div>
-            <input type="submit" value="Add Equipment" className="btn btn-block bg-[#273248] text-white hover:text-black" />
+            <input type="submit" value="Update Equipment" className="btn btn-block bg-[#273248] text-white hover:text-black" />
         </form>
     </div>
     );
 };
 
-export default AddEquipment;
+export default UpdateEquipment;

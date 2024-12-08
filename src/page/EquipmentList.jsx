@@ -1,8 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const EquipmentList = () => {
-  const allEquipment = useLoaderData();
+  const equipmentList = useLoaderData();
+  const [allEquipment,setAllEquipment] = useState(equipmentList)
 
   const handleDelete = (id) => {
     console.log(id);
@@ -27,6 +29,8 @@ const EquipmentList = () => {
                 text: "Your Product has been deleted.",
                 icon: "success",
               });
+              const remaining = allEquipment.filter(equip => equip._id !== id);
+              setAllEquipment(remaining)
             }
           });
       }
@@ -83,9 +87,11 @@ const EquipmentList = () => {
                   <p className="text-sm text-gray-600">{equipment.email}</p>
                 </td>
                 <td className="px-4 py-2 border text-center">
-                  <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 mr-2">
+                 <Link to={`/updateEquipment/${equipment._id}`}>
+                 <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 mr-2">
                     Update
                   </button>
+                 </Link>
                   <button
                     onClick={() => handleDelete(equipment._id)}
                     className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
@@ -128,12 +134,17 @@ const EquipmentList = () => {
               )
             </p>
             <div className="mt-4 flex justify-between">
-              <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
-                Update
-              </button>
-              <button className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">
-                Delete
-              </button>
+            <Link to={`/updateEquipment/${equipment._id}`}>
+                 <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600 mr-2">
+                    Update
+                  </button>
+                 </Link>
+                  <button
+                    onClick={() => handleDelete(equipment._id)}
+                    className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
             </div>
           </div>
         ))}
