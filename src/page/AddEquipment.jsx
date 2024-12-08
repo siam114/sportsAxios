@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddEquipment = () => {
+    const { user } = useContext(AuthContext);
+    // console.log(user.displayName)
     const handleAddEquipment = e =>{
         e.preventDefault();
 
@@ -14,8 +18,10 @@ const AddEquipment = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const photo = form.photo.value;
+        const email = form.email.value;
+        const username = form.username.value;
 
-        const newEquipment = {name,category,description,customization,time,status,price,rating,photo}
+        const newEquipment = {name,category,description,customization,time,status,price,rating,photo,email,username}
         console.log(newEquipment)
 
         // send data to the server
@@ -116,6 +122,25 @@ const AddEquipment = () => {
                     </label>
                     <label className="input-group">
                         <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" id="" />
+                    </label>
+                </div>
+            </div>
+            {/* form email and Rating name */}
+            <div className="md:flex gap-5">
+                <div className="form-control md:w-1/2">
+                    <label className="label">
+                        <span className="label-text font-semibold">User Email</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="email" readOnly defaultValue={user?.email || ""} name="email" placeholder="Email" className="input input-bordered w-full"/>
+                    </label>
+                </div>
+                <div className="form-control md:w-1/2">
+                    <label className="label">
+                        <span className="label-text font-semibold">User Name</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="text" readOnly defaultValue={user?.displayName}  name="username" placeholder="Name" className="input input-bordered w-full" id="" />
                     </label>
                 </div>
             </div>
