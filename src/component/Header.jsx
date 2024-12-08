@@ -31,7 +31,7 @@ const Header = () => {
   }, [theme]);
 
   return (
-    <div className="navbar bg-[#273248] text-white w-full mx-auto md:px-10 py-2">
+    <div className="navbar dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white w-full mx-auto md:px-10 py-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div

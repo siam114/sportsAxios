@@ -88,7 +88,7 @@ const Details = () => {
           <span className="ml-2 text-gray-600 text-sm">({rating} Reviews)</span>
         </div>
 
-        <button className="mt-6 px-6 py-2 bg-[#273248] text-white rounded hover:bg-red-600 transition">
+        <button className="mt-6 px-6 py-2 dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white rounded hover:bg-red-600 transition">
           <Link to="/">
             <FaArrowLeftLong className="inline-flex mr-1" /> Back to Home
           </Link>

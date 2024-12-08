@@ -7,7 +7,7 @@ const AllEquipment = () => {
 
   // Fetch data from the backend with sorting
   const fetchEquipments = async () => {
-    const response = await fetch(`http://localhost:5000/equipment?sortOrder=${sortOrder}`);
+    const response = await fetch(`https://6th-assignment-sport-axis-server.vercel.app/equipment?sortOrder=${sortOrder}`);
     const data = await response.json();
 
     // Convert the price to number for sorting purposes

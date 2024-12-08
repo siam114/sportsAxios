@@ -95,7 +95,7 @@ const Register = () => {
         
         const newUser = {name,email,photo}
         // save new user info to the firebase
-        fetch('http://localhost:5000/users',{
+        fetch('https://6th-assignment-sport-axis-server.vercel.app/users',{
           method: 'POST',
           headers:{
             'content-type' : 'application/json'
@@ -105,7 +105,7 @@ const Register = () => {
         .then(res => res.json())
         .then(data =>{
           if(data.insertedId){
-            console.log('user created in db')
+            // console.log('user created in db')
           }
         })
       })
@@ -184,7 +184,7 @@ const Register = () => {
           )}
 
         <div className="form-control mt-6">
-          <button className="btn bg-[#273248] text-white hover:text-black">
+          <button className="btn dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white hover:text-black">
             Register
           </button>
         </div>

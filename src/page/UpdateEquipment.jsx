@@ -25,10 +25,10 @@ const UpdateEquipment = () => {
         const username = form.username.value;
 
         const updatedEquipment = {name,category,description,customization,time,status,price,rating,photo,email,username}
-        console.log(updatedEquipment)
+        // console.log(updatedEquipment)
 
         // send data to the server
-        fetch(`http://localhost:5000/equipment/${_id}`,{
+        fetch(`https://6th-assignment-sport-axis-server.vercel.app/equipment/${_id}`,{
             method: 'PUT',
             headers:{
                 'content-type':'application/json'
@@ -37,7 +37,7 @@ const UpdateEquipment = () => {
         })
         .then(res =>res.json())
         .then(data=>{
-            console.log(data);
+            // console.log(data);
             if(data.modifiedCount > 0){
                 Swal.fire({
                     title: 'Success!',
@@ -159,7 +159,7 @@ const UpdateEquipment = () => {
                     </label>
                 </div>
             </div>
-            <input type="submit" value="Update Equipment" className="btn btn-block bg-[#273248] text-white hover:text-black" />
+            <input type="submit" value="Update Equipment" className="btn btn-block dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white hover:text-black" />
         </form>
     </div>
     );

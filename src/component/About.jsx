@@ -6,7 +6,7 @@ AOS.init();
 const About = () => {
     return (
       <div>
-        <section className="bg-[#F4F3F0]  py-12">
+        <section className="py-12">
           <div className="container mx-auto px-6 text-gray-800">
             <h2 className="text-4xl font-bold text-center mb-8">About Us</h2>
   

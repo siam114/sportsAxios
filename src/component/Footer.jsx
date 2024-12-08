@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-[#273248] text-white rounded p-10">
+    <footer className="footer footer-center dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white rounded p-10">
         <div>
             <h2 className="text-3xl font-bold">SportAxis</h2>
             <p className="md:w-[500px]">SportAxis is your go-to store for high-quality sports equipment, offering a wide range of products to elevate your game and fuel your passion for sports.</p>

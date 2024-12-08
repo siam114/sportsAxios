@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,
-                loader: ()=>fetch('http://localhost:5000/equipment-home')
+                loader: ()=>fetch('https://6th-assignment-sport-axis-server.vercel.app/equipment-home')
             },
             {
                 path: '/addEquipment',
@@ -30,18 +30,18 @@ const router = createBrowserRouter([
             },
             {
                 path: '/updateEquipment/:id',
-                element: <UpdateEquipment/>,
-                loader: ({params}) => fetch(`http://localhost:5000/equipment/${params.id}`) 
+                element: <PrivateRoute><UpdateEquipment/></PrivateRoute>,
+                loader: ({params}) => fetch(`https://6th-assignment-sport-axis-server.vercel.app/equipment/${params.id}`) 
             },
             {
                 path: '/allList',
-                element: <EquipmentList/>,
-                loader: ()=>fetch('http://localhost:5000/equipment')
+                element: <PrivateRoute><EquipmentList/></PrivateRoute>,
+                loader: ()=>fetch('https://6th-assignment-sport-axis-server.vercel.app/equipment')
             },
             {
                 path: '/allSports',
                 element: <AllEquipment/>,
-                // loader: ()=>fetch('http://localhost:5000/equipment')
+                // loader: ()=>fetch('https://6th-assignment-sport-axis-server.vercel.app/equipment')
             },
             {
                 path: '/about',
@@ -50,12 +50,12 @@ const router = createBrowserRouter([
             {
                 path: '/equipment/:id/details',
                 element:<PrivateRoute><Details/></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/equipment/${params.id}`)
+                loader: ({params})=>fetch(`https://6th-assignment-sport-axis-server.vercel.app/equipment/${params.id}`)
             },
             {
                 path: '/products',
                 element: <PrivateRoute> <AllProduct/></PrivateRoute>,
-                loader: ()=>fetch('http://localhost:5000/equipment')
+                loader: ()=>fetch('https://6th-assignment-sport-axis-server.vercel.app/equipment')
             }
         ]
     },

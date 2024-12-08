@@ -86,7 +86,7 @@ const Product = ({ product }) => {
         <div className="my-3">
           <Link
             to={`/equipment/${_id}/details`}
-            className="w-full mt-4 px-4 py-2 bg-[#273248] text-white rounded hover:bg-red-600 transition"
+            className="w-full mt-4 px-4 py-2 dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white rounded hover:bg-red-600 transition"
           >
             View Details
           </Link>

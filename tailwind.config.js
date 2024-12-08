@@ -15,6 +15,8 @@ export default {
       "light",
       "dark",
     ],
+    darkTheme: "dark",
   },
+  darkMode: ['class', '[data-theme="night"]'],
 }
 

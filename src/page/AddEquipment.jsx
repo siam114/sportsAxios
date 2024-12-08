@@ -22,10 +22,10 @@ const AddEquipment = () => {
         const username = form.username.value;
 
         const newEquipment = {name,category,description,customization,time,status,price,rating,photo,email,username}
-        console.log(newEquipment)
+        // console.log(newEquipment)
 
         // send data to the server
-        fetch('http://localhost:5000/equipment',{
+        fetch('https://6th-assignment-sport-axis-server.vercel.app/equipment',{
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -156,7 +156,7 @@ const AddEquipment = () => {
                     </label>
                 </div>
             </div>
-            <input type="submit" value="Add Equipment" className="btn btn-block bg-[#273248] text-white hover:text-black" />
+            <input type="submit" value="Add Equipment" className="btn btn-block dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white hover:text-black" />
         </form>
     </div>
     );

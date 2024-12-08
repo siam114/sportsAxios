@@ -7,7 +7,7 @@ const EquipmentList = () => {
   const [allEquipment,setAllEquipment] = useState(equipmentList)
 
   const handleDelete = (id) => {
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -18,7 +18,7 @@ const EquipmentList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/equipment/${id}`,{
+        fetch(`https://6th-assignment-sport-axis-server.vercel.app/equipment/${id}`,{
           method: 'DELETE'
         })
           .then((res) => res.json())
@@ -39,7 +39,7 @@ const EquipmentList = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+      <h2 className="text-3xl font-bold text-center mb-8">
         My Equipment List
       </h2>
 
@@ -47,7 +47,7 @@ const EquipmentList = () => {
       <div className="hidden md:block overflow-x-auto">
         <table className="table-auto w-full border-collapse border border-gray-200">
           <thead>
-            <tr className="bg-gray-100 text-gray-800">
+            <tr className="">
               <th className="px-4 py-2 border">Photo</th>
               <th className="px-4 py-2 border">Name</th>
               <th className="px-4 py-2 border">Category</th>
@@ -61,7 +61,7 @@ const EquipmentList = () => {
             {allEquipment.map((equipment, index) => (
               <tr
                 key={equipment._id}
-                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
               >
                 <td className="px-4 py-2 border text-center">
                   <img
