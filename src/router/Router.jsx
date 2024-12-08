@@ -11,6 +11,7 @@ import LogIn from "../page/LogIn";
 import Register from "../page/Register";
 import Details from "../component/Details";
 import PrivateRoute from "./PrivateRoute";
+import AllProduct from "../component/AllProduct";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home/>,
-                loader: ()=>fetch('http://localhost:5000/equipment')
+                loader: ()=>fetch('http://localhost:5000/equipment-home')
             },
             {
                 path: '/addEquipment',
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
                 path: '/equipment/:id/details',
                 element:<PrivateRoute><Details/></PrivateRoute>,
                 loader: ({params})=>fetch(`http://localhost:5000/equipment/${params.id}`)
+            },
+            {
+                path: '/products',
+                element: <PrivateRoute> <AllProduct/></PrivateRoute>,
+                loader: ()=>fetch('http://localhost:5000/equipment')
             }
         ]
     },

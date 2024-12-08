@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import HomeSlider from "../component/HomeSlider";
 import Leading from "../component/Leading";
 import Product from "../component/Product";
@@ -22,6 +22,7 @@ const Home = () => {
             productData.map((product) => <Product key={product._id} product={product}/>)
           }
         </div>
+        <button className="mt-4 mx-auto block  px-4 py-3 bg-[#273248] text-white rounded-lg hover:bg-[#273248e5]"><Link to='/products'>More Products</Link></button>
         <ProudClient />
         <Fade direction="right" duration={2000}>
         <Leading />

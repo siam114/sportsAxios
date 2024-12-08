@@ -67,7 +67,7 @@ const Header = () => {
               src={user?.photoURL}
               alt=""
             />
-             <ReactTooltip id="user-tooltip" place="top" type="dark" effect="float" />
+             <ReactTooltip id="user-tooltip" place="left" type="dark" effect="float" />
             {/* <p> {user && user.email}</p> */}
           </div>
         ) : null}
