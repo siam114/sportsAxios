@@ -20,6 +20,13 @@ const Header = () => {
     </div>
   );
 
+  const links1 =(
+    <div className="flex flex-col md:flex-row gap-2 md:gap-5 font-semibold">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/allSports">All Sports Equipment</NavLink>
+    </div>
+  )
+
   const handleToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
@@ -31,7 +38,7 @@ const Header = () => {
   }, [theme]);
 
   return (
-    <div className="navbar dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white w-full mx-auto md:px-10 py-2">
+    <div className="navbar fixed z-50 top-0 bg-opacity-60 dark:text-[#273248] dark:bg-slate-300 bg-[#273248] text-white w-full mx-auto md:px-10 py-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -55,7 +62,10 @@ const Header = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        {
+          user ? <ul className="menu menu-horizontal px-1">{links}</ul> : <ul className="menu menu-horizontal px-1">{links1}</ul>
+        }
+        
       </div>
       <div className="navbar-end">
         {user ? (
@@ -64,6 +74,7 @@ const Header = () => {
              data-tooltip-id="user-tooltip"
              data-tooltip-content={user?.displayName || "No username available"}
               className="w-10 h-10 rounded-full"
+              referrerPolicy='no-referrer'
               src={user?.photoURL}
               alt=""
             />

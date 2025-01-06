@@ -8,6 +8,8 @@ import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
     const productData = useLoaderData();
+    console.log(productData);
+
     
   return (
     <div>
