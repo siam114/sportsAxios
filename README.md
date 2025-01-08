@@ -1,7 +1,16 @@
-
 # SportAxis
-## Website Live Link : https://sportaxis-project.web.app/
-## SportAxis Features
+
+## Website Live Link  
+[SportAxis Live Website](https://sportaxis-project.web.app/)
+
+---
+
+## Overview  
+SportAxis is a modern web platform for sports enthusiasts, offering real-time updates, sleek design, and intuitive navigation. Built with cutting-edge technologies like React, Vite, and Tailwind CSS, it ensures fast performance and a seamless user experience across devices.
+
+---
+
+## Features
 
 - **Dynamic User Interface**: SportAxis offers a sleek and responsive design powered by React and Tailwind CSS, ensuring a seamless experience across all devices.  
 - **Real-Time Updates**: Stay ahead of the game with real-time sports scores, news, and updates integrated directly into the platform.  
@@ -9,19 +18,43 @@
 - **Custom Styling with Tailwind CSS**: Enjoy a clean, modern design tailored to perfection with the flexibility of Tailwind CSS, ensuring visually stunning pages.  
 - **Fast Loading Times**: Optimized performance and fast-loading pages provide a frictionless user experience, thanks to the power of React's reusable components.
 
+---
 
+## Technology Stack
 
+- **Frontend Framework**: React  
+- **Build Tool**: Vite  
+- **Styling**: Tailwind CSS  
+- **Live Updates**: Real-time data integration  
 
+---
 
-# React + Vite
+## Dependencies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- `react`: Core library for building user interfaces.  
+- `react-dom`: React's DOM renderer.  
+- `vite`: Next-generation frontend tooling for lightning-fast builds.  
+- `tailwindcss`: Utility-first CSS framework for styling.  
 
-Currently, two official plugins are available:
+Other relevant dependencies can be checked in the `package.json` file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
+## How to Run Locally
 
-
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repo/sportaxis.git
+   cd sportaxis
+2. **Install dependencies:**:
+   ```bash
+   npm install
+3. **Start the development server:**:
+   ```bash
+   npm run dev 
+2. **To build for production::**:
+   ```bash
+   npm run build
+   
+---
 
